@@ -4,16 +4,30 @@
   "description": "recipe and meal planning app",
   "main": "server/server.js",
   "scripts": {
-    "dev": "nodemon server/server.js",
+    "dev": "webpack serve --open",
+    "build": "wepback",
     "start": "node server/server/js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anna",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.5"
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-react": "^7.24.7",
+    "babel-loader": "^9.2.1",
+    "nodemon": "^3.1.5",
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
-    "express": "^4.21.0"
+    "css-loader": "^7.1.2",
+    "express": "^4.21.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-redux": "^9.1.2",
+    "redux": "^5.0.1",
+    "style-loader": "^4.0.0"
   }
 }
