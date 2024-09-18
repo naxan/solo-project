@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack serve --open",
     "build": "wepback",
-    "start": "node server/server/js",
+    "start": "nodemon server/server/js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anna",
@@ -22,6 +22,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.2.7",
     "css-loader": "^7.1.2",
     "express": "^4.21.0",
     "react": "^18.3.1",

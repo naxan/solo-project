@@ -29,7 +29,7 @@ module.exports = {
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, 'client'),
+      directory: path.join(__dirname, 'build'),
     },
     proxy: [
       {

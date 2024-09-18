@@ -7,7 +7,7 @@ const PORT = 3000;
 app.use(express.json());
 
 // serve static files
-app.use('/', express.static(path.resolve(__dirname, '../client')));
+app.use('/', express.static(path.resolve(__dirname, 'build')));
 
 // global error handler
 app.use((err, req, res, next) => {
