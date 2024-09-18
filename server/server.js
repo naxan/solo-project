@@ -1,13 +1,19 @@
 const express = require('express');
-const app = express();
 const path = require('path');
+const app = express();
+
+const recipeRouter = require('./routes/recipe');
 
 const PORT = 3000;
 
+// handle parsing requests
 app.use(express.json());
 
 // serve static files
 app.use('/', express.static(path.resolve(__dirname, 'build')));
+
+// handle routers
+app.use('/recipes', recipeRouter)
 
 // global error handler
 app.use((err, req, res, next) => {
