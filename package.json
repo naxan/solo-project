@@ -1,15 +1,19 @@
 {
   "name": "solo-project",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "recipe and meal planning app",
+  "main": "server/server.js",
   "scripts": {
     "dev": "nodemon server/server.js",
+    "start": "node server/server/js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Anna",
   "license": "ISC",
-  "description": "",
-  "dependencies": {
+  "devDependencies": {
     "nodemon": "^3.1.5"
+  },
+  "dependencies": {
+    "express": "^4.21.0"
   }
 }
