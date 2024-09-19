@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {
   addRecipeActionCreator,
   setDescriptionActionCreator,
@@ -16,7 +17,9 @@ import {
 // reducer will take newRecipe state and push it to recipeList array, then set newRecipe back to default values
 
 const NewRecipeForm = () => {
+  // create imported functions
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleTitle = (title) => {
     dispatch(setTitleActionCreator(title));
@@ -40,7 +43,14 @@ const NewRecipeForm = () => {
     <div id='new-recipe-form-page'>
       <h2>Recipe Form</h2>
       <div id='new-recipe-form-container'>
-        <form id='new-recipe-form' onSubmit={handleRecipeSubmit}>
+        <form
+          id='new-recipe-form'
+          onSubmit={(e) => {
+            handleRecipeSubmit(e);
+            // change to /recipes later
+            navigate('/');
+          }}
+        >
           <label htmlFor='title'>Name:</label>
           <br></br>
           <input
