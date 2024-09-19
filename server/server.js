@@ -13,7 +13,12 @@ app.use(express.json());
 app.use('/', express.static(path.resolve(__dirname, 'build')));
 
 // handle routers
-app.use('/recipes', recipeRouter)
+app.use('/api/recipes', recipeRouter);
+
+// handle client side routing
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 // global error handler
 app.use((err, req, res, next) => {
