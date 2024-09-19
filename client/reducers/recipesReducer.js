@@ -12,7 +12,7 @@ const initialState = {
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
       rating: 4,
-      img: 'img src/url',
+      img: '../images/mixed-berry-smoothie.jpg',
     },
     {
       id: 1,
@@ -24,7 +24,7 @@ const initialState = {
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
       rating: 4,
-      img: 'img src/url',
+      img: '../images/mixed-berry-smoothie.jpg',
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ const initialState = {
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
       rating: 4,
-      img: 'img src/url',
+      img: '../images/mixed-berry-smoothie.jpg',
     },
     {
       id: 3,
@@ -48,7 +48,7 @@ const initialState = {
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
       rating: 4,
-      img: 'img src/url',
+      img: '../images/mixed-berry-smoothie.jpg',
     },
     {
       id: 4,
@@ -60,7 +60,7 @@ const initialState = {
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
       rating: 4,
-      img: 'img src/url',
+      img: '../images/mixed-berry-smoothie.jpg',
     },
     {
       id: 5,
@@ -72,7 +72,7 @@ const initialState = {
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
       rating: 4,
-      img: 'img src/url',
+      img: '../images/mixed-berry-smoothie.jpg',
     },
     {
       id: 6,
@@ -84,7 +84,7 @@ const initialState = {
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
       rating: 4,
-      img: 'img src/url',
+      img: '../images/mixed-berry-smoothie.jpg',
     },
     {
       id: 7,
@@ -96,7 +96,7 @@ const initialState = {
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
       rating: 4,
-      img: 'img src/url',
+      img: '../images/mixed-berry-smoothie.jpg',
     },
   ],
   nextId: 8,

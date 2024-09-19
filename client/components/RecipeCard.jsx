@@ -28,20 +28,24 @@ const RecipeCard = ({
 
   return (
     <div className='recipe-card'>
-      <img src={img} alt={title} />
-      <h3>{title}</h3>
-      <h5>{prepTime}</h5>
-      <span>{rating}</span>
-      <em>Description</em>
-      <p>{description}</p>
-      <em>Instructions</em>
-      <p>{instructions}</p>
-      <em>Ingredients</em>
-      <ul>{ingredientList}</ul>
-      <div id='tag-list'>{tagList}</div>
-      <div>
-        <button>Add to Meal Plan</button>
-        <button>View Full Recipe</button>
+      {/* <div className='recipe-img'> */}
+        <img src={img} alt={title} />
+      {/* </div> */}
+      <div className='recipe-card-content'>
+        <h3>{title}</h3>
+        <h5>{prepTime}</h5>
+        <p>{rating}</p>
+        <em>Description</em>
+        <p>{description}</p>
+        <em>Instructions</em>
+        <p>{instructions}</p>
+        <em>Ingredients</em>
+        <ul>{ingredientList}</ul>
+        <div id='tag-list'>{tagList}</div>
+        <div>
+          <button>Add to Meal Plan</button>
+          <button>View Full Recipe</button>
+        </div>
       </div>
     </div>
   );

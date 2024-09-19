@@ -11,11 +11,13 @@ import RecipeContainer from '../containers/RecipeContainer';
 
 const RecipePage = () => {
   return (
-    <div>
-      <h2>Recipe Page</h2>
-      <RecipeSearch />
+    <div id="recipe-page">
+      {/* <h2>Recipe Page</h2> */}
       <RecipeSidebar />
+      <div id="recipe-and-search-container">
+      <RecipeSearch />
       <RecipeContainer />
+      </div>
     </div>
   );
 };
