@@ -104,24 +104,50 @@ const initialState = {
   newRecipe: {},
 };
 
+// example of what a recipe object should look like
+const exampleRecipe = {
+  id: 'num?',
+  title: '',
+  description: '',
+  instructions: '',
+  ingredients: [],
+  tags: [],
+  prepTime: '',
+  rating: '(num value)',
+  img: 'img src/url',
+};
+
 const recipesReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.TESTING: {
       console.log('testing');
     }
     case types.ADD_RECIPE: {
-      // would need to increment nextId with each new recipe
+      // would need to increment nextId with each new recipe (after assigning nextId to newRecipe id)
       // should replace with database id once backend is implemented
-      const newRecipe = {
-        id: 'num?',
-        title: '',
-        description: '',
-        instructions: '',
-        ingredients: [],
-        tags: new Set(),
-        prepTime: '',
-        rating: '(num value)',
-        img: 'img src/url',
+
+      // take newRecipe state object
+      // create new array that is a deep copy of the recipeList array
+      // push newRecipe onto the new recipe list
+      // declare variable newRecipe and set it equal to an empty object
+      // return state, new recipe list, and new newRecipe (empty object)
+      console.log('hi from the add recipe action creator!');
+
+      console.log('recipe list: ', state.recipeList);
+      console.log('new recipe: ', state.newRecipe);
+      const recipeList = structuredClone(state.recipeList);
+      console.log('recipe list: ', recipeList);
+      let newRecipe = structuredClone(state.newRecipe);
+      console.log('new recipe: ', newRecipe);
+      recipeList.push(newRecipe);
+      newRecipe = {};
+      console.log('recipe list: ', recipeList);
+      console.log('new recipe: ', newRecipe);
+
+      return {
+        ...state,
+        recipeList,
+        newRecipe,
       };
     }
     case types.SET_TITLE: {
@@ -129,9 +155,13 @@ const recipesReducer = (state = initialState, action) => {
       console.log('current title state: ', state.newRecipe.title);
       const newRecipe = {
         title: action.payload,
-        description: state.description,
-        instructions: state.instructions,
-        prepTime: state.prepTime,
+        description: state.newRecipe.description,
+        instructions: state.newRecipe.instructions,
+        prepTime: state.newRecipe.prepTime,
+        ingredients: [],
+        tags: [],
+        rating: 0,
+        img: '',
       };
       console.log('title in newRecipe: ', newRecipe.title);
 
@@ -144,10 +174,14 @@ const recipesReducer = (state = initialState, action) => {
       // update newRecipe.description
       console.log('current description state: ', state.newRecipe.description);
       const newRecipe = {
-        title: state.title,
+        title: state.newRecipe.title,
         description: action.payload,
-        instructions: state.instructions,
-        prepTime: state.prepTime,
+        instructions: state.newRecipe.instructions,
+        prepTime: state.newRecipe.prepTime,
+        ingredients: [],
+        tags: [],
+        rating: 0,
+        img: '',
       };
       console.log('description in newRecipe: ', newRecipe.description);
 
@@ -160,10 +194,14 @@ const recipesReducer = (state = initialState, action) => {
       // update newRecipe.instructions
       console.log('current instructions state: ', state.newRecipe.instructions);
       const newRecipe = {
-        title: state.title,
-        description: state.description,
+        title: state.newRecipe.title,
+        description: state.newRecipe.description,
         instructions: action.payload,
-        prepTime: state.prepTime,
+        prepTime: state.newRecipe.prepTime,
+        ingredients: [],
+        tags: [],
+        rating: 0,
+        img: '',
       };
       console.log('instructions in newRecipe: ', newRecipe.instructions);
 
@@ -176,10 +214,14 @@ const recipesReducer = (state = initialState, action) => {
       // update newRecipe.prepTime
       console.log('current prepTime state: ', state.newRecipe.prepTime);
       const newRecipe = {
-        title: state.title,
-        description: state.description,
-        instructions: state.instructions,
+        title: state.newRecipe.title,
+        description: state.newRecipe.description,
+        instructions: state.newRecipe.instructions,
         prepTime: action.payload,
+        ingredients: [],
+        tags: [],
+        rating: 0,
+        img: '',
       };
       console.log('prepTime in newRecipe: ', newRecipe.prepTime);
 

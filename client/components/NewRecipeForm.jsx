@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import {
+  addRecipeActionCreator,
   setDescriptionActionCreator,
   setInstructionsActionCreator,
   setPrepTimeActionCreator,
@@ -30,11 +31,16 @@ const NewRecipeForm = () => {
     dispatch(setPrepTimeActionCreator(prep));
   };
 
+  const handleRecipeSubmit = (e) => {
+    e.preventDefault();
+    dispatch(addRecipeActionCreator());
+  };
+
   return (
     <div id='new-recipe-form-page'>
       <h2>Recipe Form</h2>
       <div id='new-recipe-form-container'>
-        <form id='new-recipe-form'>
+        <form id='new-recipe-form' onSubmit={handleRecipeSubmit}>
           <label htmlFor='title'>Name:</label>
           <br></br>
           <input

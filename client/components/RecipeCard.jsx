@@ -13,6 +13,7 @@ const RecipeCard = ({
   img,
 }) => {
   const ingredientList = [];
+  if (ingredients) {
   ingredients.forEach((el, index) => {
     ingredientList.push(
       <li key={index}>
@@ -20,6 +21,7 @@ const RecipeCard = ({
       </li>
     );
   });
+}
 
   const tagList = [];
   for (let item of tags) {
