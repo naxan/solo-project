@@ -56,11 +56,13 @@ const RecipeCard = ({
         <p>{instructions}</p>
         <em>Ingredients</em>
         <ul>{ingredientList}</ul>
-        <div id='tag-list'>{tagList}</div>
+        <div id='tag-list'><span>Tags: </span>{tagList}</div>
         <div>
-          <button>Add to Meal Plan</button>
-          <button>View Full Recipe</button>
-          <button onClick={handleDeleteRecipe}>Delete Recipe</button>
+          <button className='recipe-card-button'>Add to Meal Plan</button>
+          <button className='recipe-card-button'>View Full Recipe</button>
+          <button className='recipe-card-button' onClick={handleDeleteRecipe}>
+            Delete Recipe
+          </button>
         </div>
       </div>
     </div>

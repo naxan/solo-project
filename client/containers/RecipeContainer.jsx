@@ -26,7 +26,6 @@ const RecipeContainer = () => {
       const recipe = recipeList[i];
       const title = recipe.title.toUpperCase();
       const currentSearch = search.toUpperCase();
-      console.log(title, currentSearch);
       if (title.includes(currentSearch)) {
         recipeCards.push(<RecipeCard key={recipe.id} {...recipe} />);
       }

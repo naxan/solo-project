@@ -5,9 +5,11 @@ import { useNavigate } from 'react-router-dom';
 const RecipeSidebar = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div id='recipe-sidebar'>
       <h2>Recipe Sidebar</h2>
-      <button id='add-recipe' onClick={() => navigate('/recipes/new')}>Add New Recipe</button>
+      <button id='add-recipe' onClick={() => navigate('/recipes/new')}>
+        Add New Recipe
+      </button>
     </div>
   );
 };
