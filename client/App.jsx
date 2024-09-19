@@ -16,7 +16,7 @@ const App = () => {
       <Routes>
         {/* <Route path='/' element={<HomePage />}></Route> */}
         {/* change back to /recipes */}
-        <Route path='/' element={<RecipePage />}></Route>
+        <Route path='/*' element={<RecipePage />}></Route>
         <Route path='/planner' element={<PlannerPage />}></Route>
       </Routes>
     </BrowserRouter>

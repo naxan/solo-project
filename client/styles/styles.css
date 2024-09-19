@@ -2,7 +2,7 @@
 * GENERAL
 */
 * {
-    margin: 0;
+  margin: 0;
 }
 
 em {
@@ -48,7 +48,7 @@ input:focus {
 }
 
 .recipe-content h3 {
-    margin: 0px;
+  margin: 0px;
 }
 
 .tag {
@@ -107,4 +107,12 @@ input:focus {
 
 #tag-list {
   display: flex;
+}
+
+#recipe-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }

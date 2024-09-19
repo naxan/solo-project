@@ -1,8 +1,9 @@
 import React from 'react';
 
-import RecipeSearch from '../components/RecipeSearch';
 import RecipeSidebar from '../components/RecipeSidebar';
-import RecipeContainer from '../containers/RecipeContainer';
+import RecipeAndSearchContainer from '../containers/RecipeAndSearchContainer';
+import NewRecipeForm from '../components/NewRecipeForm';
+import { Routes, Route} from 'react-router-dom';
 
 // should have a search bar at the top
 // sidebar on the left
@@ -11,13 +12,14 @@ import RecipeContainer from '../containers/RecipeContainer';
 
 const RecipePage = () => {
   return (
-    <div id="recipe-page">
+    <div id='recipe-page'>
       {/* <h2>Recipe Page</h2> */}
       <RecipeSidebar />
-      <div id="recipe-and-search-container">
-      <RecipeSearch />
-      <RecipeContainer />
-      </div>
+        <Routes>
+            {/* change path to /recipes later */}
+          <Route path='/' element={<RecipeAndSearchContainer />}></Route>
+          <Route path='/recipes/new' element={<NewRecipeForm />}></Route>
+        </Routes>
     </div>
   );
 };
