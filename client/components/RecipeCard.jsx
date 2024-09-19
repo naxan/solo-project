@@ -13,9 +13,9 @@ const RecipeCard = ({
   img,
 }) => {
   const ingredientList = [];
-  ingredients.forEach((el) => {
+  ingredients.forEach((el, index) => {
     ingredientList.push(
-      <li>
+      <li key={index}>
         {el.amount} {el.ingredient}
       </li>
     );
@@ -23,13 +23,13 @@ const RecipeCard = ({
 
   const tagList = [];
   for (let item of tags) {
-    tagList.push(<Tag tag={item} />);
+    tagList.push(<Tag key={item} tag={item} />);
   }
 
   return (
     <div className='recipe-card'>
       {/* <div className='recipe-img'> */}
-        <img src={img} alt={title} />
+      <img src={img} alt={title} />
       {/* </div> */}
       <div className='recipe-card-content'>
         <h3>{title}</h3>

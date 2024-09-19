@@ -9,7 +9,7 @@ const initialState = {
       instructions:
         'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
-      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      tags: ['breakfast', 'lunch', 'dinner'],
       prepTime: '35 min',
       rating: 4,
       img: '../images/mixed-berry-smoothie.jpg',
@@ -21,7 +21,7 @@ const initialState = {
       instructions:
         'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
-      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      tags: ['breakfast', 'lunch', 'dinner'],
       prepTime: '35 min',
       rating: 4,
       img: '../images/mixed-berry-smoothie.jpg',
@@ -33,7 +33,7 @@ const initialState = {
       instructions:
         'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
-      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      tags: ['breakfast', 'lunch', 'dinner'],
       prepTime: '35 min',
       rating: 4,
       img: '../images/mixed-berry-smoothie.jpg',
@@ -45,7 +45,7 @@ const initialState = {
       instructions:
         'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
-      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      tags: ['breakfast', 'lunch', 'dinner'],
       prepTime: '35 min',
       rating: 4,
       img: '../images/mixed-berry-smoothie.jpg',
@@ -57,7 +57,7 @@ const initialState = {
       instructions:
         'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
-      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      tags: ['breakfast', 'lunch', 'dinner'],
       prepTime: '35 min',
       rating: 4,
       img: '../images/mixed-berry-smoothie.jpg',
@@ -69,7 +69,7 @@ const initialState = {
       instructions:
         'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
-      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      tags: ['breakfast', 'lunch', 'dinner'],
       prepTime: '35 min',
       rating: 4,
       img: '../images/mixed-berry-smoothie.jpg',
@@ -81,7 +81,7 @@ const initialState = {
       instructions:
         'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
-      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      tags: ['breakfast', 'lunch', 'dinner'],
       prepTime: '35 min',
       rating: 4,
       img: '../images/mixed-berry-smoothie.jpg',
@@ -93,14 +93,15 @@ const initialState = {
       instructions:
         'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
-      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      tags: ['breakfast', 'lunch', 'dinner'],
       prepTime: '35 min',
       rating: 4,
       img: '../images/mixed-berry-smoothie.jpg',
     },
   ],
   nextId: 8,
-  search: '',
+  recipeSearch: '',
+  newRecipe: {},
 };
 
 const recipesReducer = (state = initialState, action) => {
@@ -121,6 +122,70 @@ const recipesReducer = (state = initialState, action) => {
         prepTime: '',
         rating: '(num value)',
         img: 'img src/url',
+      };
+    }
+    case types.SET_TITLE: {
+      // update newRecipe.title
+      console.log('current title state: ', state.newRecipe.title);
+      const newRecipe = {
+        title: action.payload,
+        description: state.description,
+        instructions: state.instructions,
+        prepTime: state.prepTime,
+      };
+      console.log('title in newRecipe: ', newRecipe.title);
+
+      return {
+        ...state,
+        newRecipe,
+      };
+    }
+    case types.SET_DESCRIPTION: {
+      // update newRecipe.description
+      console.log('current description state: ', state.newRecipe.description);
+      const newRecipe = {
+        title: state.title,
+        description: action.payload,
+        instructions: state.instructions,
+        prepTime: state.prepTime,
+      };
+      console.log('description in newRecipe: ', newRecipe.description);
+
+      return {
+        ...state,
+        newRecipe,
+      };
+    }
+    case types.SET_INSTRUCTIONS: {
+      // update newRecipe.instructions
+      console.log('current instructions state: ', state.newRecipe.instructions);
+      const newRecipe = {
+        title: state.title,
+        description: state.description,
+        instructions: action.payload,
+        prepTime: state.prepTime,
+      };
+      console.log('instructions in newRecipe: ', newRecipe.instructions);
+
+      return {
+        ...state,
+        newRecipe,
+      };
+    }
+    case types.SET_PREPTIME: {
+      // update newRecipe.prepTime
+      console.log('current prepTime state: ', state.newRecipe.prepTime);
+      const newRecipe = {
+        title: state.title,
+        description: state.description,
+        instructions: state.instructions,
+        prepTime: action.payload,
+      };
+      console.log('prepTime in newRecipe: ', newRecipe.prepTime);
+
+      return {
+        ...state,
+        newRecipe,
       };
     }
     default: {

@@ -15,11 +15,7 @@ const RecipeContainer = () => {
     recipeCards.push(<RecipeCard key={recipe.id} {...recipe} />);
   }
 
-  return (
-    <div id='recipe-container'>
-      {recipeCards}
-    </div>
-  );
+  return <div id='recipe-container'>{recipeCards}</div>;
 };
 
 export default RecipeContainer;
