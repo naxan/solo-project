@@ -14,8 +14,9 @@ const App = () => {
     <BrowserRouter>
       <HeaderNav />
       <Routes>
-        <Route path='/' element={<HomePage />}></Route>
-        <Route path='/recipes' element={<RecipePage />}></Route>
+        {/* <Route path='/' element={<HomePage />}></Route> */}
+        {/* change back to /recipes */}
+        <Route path='/' element={<RecipePage />}></Route>
         <Route path='/planner' element={<PlannerPage />}></Route>
       </Routes>
     </BrowserRouter>

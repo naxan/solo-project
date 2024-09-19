@@ -22,8 +22,8 @@ const RecipeCard = ({
   });
 
   const tagList = [];
-  for (const tag of tags) {
-    tagList.push(<Tag tag />);
+  for (let item of tags) {
+    tagList.push(<Tag tag={item} />);
   }
 
   return (
@@ -38,7 +38,7 @@ const RecipeCard = ({
       <p>{instructions}</p>
       <em>Ingredients</em>
       <ul>{ingredientList}</ul>
-      <div>{tagList}</div>
+      <div id='tag-list'>{tagList}</div>
       <div>
         <button>Add to Meal Plan</button>
         <button>View Full Recipe</button>

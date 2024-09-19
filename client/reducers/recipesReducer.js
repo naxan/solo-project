@@ -100,6 +100,7 @@ const initialState = {
     },
   ],
   nextId: 8,
+  search: '',
 };
 
 const recipesReducer = (state = initialState, action) => {
