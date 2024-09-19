@@ -138,6 +138,9 @@ const recipesReducer = (state = initialState, action) => {
       const recipeList = structuredClone(state.recipeList);
       console.log('recipe list: ', recipeList);
       let newRecipe = structuredClone(state.newRecipe);
+      let nextId = state.nextId;
+      newRecipe.id = nextId;
+      nextId++;
       console.log('new recipe: ', newRecipe);
       recipeList.push(newRecipe);
       newRecipe = {};
@@ -148,6 +151,27 @@ const recipesReducer = (state = initialState, action) => {
         ...state,
         recipeList,
         newRecipe,
+        nextId,
+      };
+    }
+    case types.DELETE_RECIPE: {
+      // get id from payload
+      // create deep copy of recipe list
+      // iterate through recipe list for recipe matching payload id
+      // splice out that recipe from the array
+      // return state with new recipe list array
+
+      const recipeList = structuredClone(state.recipeList);
+      for (let i = 0; i < recipeList.length; i++) {
+        if (recipeList[i].id === action.payload) {
+          recipeList.splice(i, 1);
+          break;
+        }
+      }
+
+      return {
+        ...state,
+        recipeList,
       };
     }
     case types.SET_TITLE: {

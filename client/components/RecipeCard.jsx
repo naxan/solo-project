@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import Tag from './Tag';
+import { deleteRecipeActionCreator } from '../actions/recipeActions';
 
 const RecipeCard = ({
+  id,
   title,
   description,
   instructions,
@@ -12,21 +15,31 @@ const RecipeCard = ({
   rating,
   img,
 }) => {
+  // dispatch
+  const dispatch = useDispatch();
+
+  // render ingredient list
   const ingredientList = [];
   if (ingredients) {
-  ingredients.forEach((el, index) => {
-    ingredientList.push(
-      <li key={index}>
-        {el.amount} {el.ingredient}
-      </li>
-    );
-  });
-}
+    ingredients.forEach((el, index) => {
+      ingredientList.push(
+        <li key={index}>
+          {el.amount} {el.ingredient}
+        </li>
+      );
+    });
+  }
 
+  // render tags
   const tagList = [];
   for (let item of tags) {
     tagList.push(<Tag key={item} tag={item} />);
   }
+
+  // delete button
+  const handleDeleteRecipe = () => {
+    dispatch(deleteRecipeActionCreator(id));
+  };
 
   return (
     <div className='recipe-card'>
@@ -47,6 +60,7 @@ const RecipeCard = ({
         <div>
           <button>Add to Meal Plan</button>
           <button>View Full Recipe</button>
+          <button onClick={handleDeleteRecipe}>Delete Recipe</button>
         </div>
       </div>
     </div>
