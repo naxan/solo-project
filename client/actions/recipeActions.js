@@ -28,3 +28,8 @@ export const setPrepTimeActionCreator = (prepTime) => ({
   type: types.SET_PREPTIME,
   payload: prepTime,
 });
+
+export const setRecipeSearchActionCreator = (search) => ({
+  type: types.SET_SEARCH,
+  payload: search,
+});

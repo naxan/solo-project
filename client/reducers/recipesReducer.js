@@ -100,7 +100,7 @@ const initialState = {
     },
   ],
   nextId: 8,
-  recipeSearch: '',
+  search: '',
   newRecipe: {},
 };
 
@@ -131,21 +131,13 @@ const recipesReducer = (state = initialState, action) => {
       // push newRecipe onto the new recipe list
       // declare variable newRecipe and set it equal to an empty object
       // return state, new recipe list, and new newRecipe (empty object)
-      console.log('hi from the add recipe action creator!');
-
-      console.log('recipe list: ', state.recipeList);
-      console.log('new recipe: ', state.newRecipe);
       const recipeList = structuredClone(state.recipeList);
-      console.log('recipe list: ', recipeList);
       let newRecipe = structuredClone(state.newRecipe);
       let nextId = state.nextId;
       newRecipe.id = nextId;
       nextId++;
-      console.log('new recipe: ', newRecipe);
       recipeList.push(newRecipe);
       newRecipe = {};
-      console.log('recipe list: ', recipeList);
-      console.log('new recipe: ', newRecipe);
 
       return {
         ...state,
@@ -174,9 +166,20 @@ const recipesReducer = (state = initialState, action) => {
         recipeList,
       };
     }
+    case types.SET_SEARCH: {
+      // get search from payload
+      // set new search var equal to payload
+      // return state with new search
+      const search = action.payload;
+      console.log(search);
+
+      return {
+        ...state,
+        search,
+      };
+    }
     case types.SET_TITLE: {
       // update newRecipe.title
-      console.log('current title state: ', state.newRecipe.title);
       const newRecipe = {
         title: action.payload,
         description: state.newRecipe.description,
@@ -187,7 +190,6 @@ const recipesReducer = (state = initialState, action) => {
         rating: 0,
         img: '',
       };
-      console.log('title in newRecipe: ', newRecipe.title);
 
       return {
         ...state,
@@ -196,7 +198,6 @@ const recipesReducer = (state = initialState, action) => {
     }
     case types.SET_DESCRIPTION: {
       // update newRecipe.description
-      console.log('current description state: ', state.newRecipe.description);
       const newRecipe = {
         title: state.newRecipe.title,
         description: action.payload,
@@ -207,7 +208,6 @@ const recipesReducer = (state = initialState, action) => {
         rating: 0,
         img: '',
       };
-      console.log('description in newRecipe: ', newRecipe.description);
 
       return {
         ...state,
@@ -216,7 +216,6 @@ const recipesReducer = (state = initialState, action) => {
     }
     case types.SET_INSTRUCTIONS: {
       // update newRecipe.instructions
-      console.log('current instructions state: ', state.newRecipe.instructions);
       const newRecipe = {
         title: state.newRecipe.title,
         description: state.newRecipe.description,
@@ -227,7 +226,6 @@ const recipesReducer = (state = initialState, action) => {
         rating: 0,
         img: '',
       };
-      console.log('instructions in newRecipe: ', newRecipe.instructions);
 
       return {
         ...state,
@@ -236,7 +234,6 @@ const recipesReducer = (state = initialState, action) => {
     }
     case types.SET_PREPTIME: {
       // update newRecipe.prepTime
-      console.log('current prepTime state: ', state.newRecipe.prepTime);
       const newRecipe = {
         title: state.newRecipe.title,
         description: state.newRecipe.description,
@@ -247,7 +244,6 @@ const recipesReducer = (state = initialState, action) => {
         rating: 0,
         img: '',
       };
-      console.log('prepTime in newRecipe: ', newRecipe.prepTime);
 
       return {
         ...state,
