@@ -4,9 +4,94 @@ const initialState = {
   recipeList: [
     {
       id: 0,
-      title: 'Testing',
-      description: 'Testing',
-      instructions: 'asifbdsdfjgh',
+      title: 'Mixed Berry Smoothie',
+      description: 'A cold refreshing drink for summer',
+      instructions:
+        'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
+      ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
+      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      prepTime: '35 min',
+      rating: 4,
+      img: 'img src/url',
+    },
+    {
+      id: 1,
+      title: 'Mixed Berry Smoothie',
+      description: 'A cold refreshing drink for summer',
+      instructions:
+        'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
+      ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
+      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      prepTime: '35 min',
+      rating: 4,
+      img: 'img src/url',
+    },
+    {
+      id: 2,
+      title: 'Mixed Berry Smoothie',
+      description: 'A cold refreshing drink for summer',
+      instructions:
+        'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
+      ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
+      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      prepTime: '35 min',
+      rating: 4,
+      img: 'img src/url',
+    },
+    {
+      id: 3,
+      title: 'Mixed Berry Smoothie',
+      description: 'A cold refreshing drink for summer',
+      instructions:
+        'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
+      ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
+      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      prepTime: '35 min',
+      rating: 4,
+      img: 'img src/url',
+    },
+    {
+      id: 4,
+      title: 'Mixed Berry Smoothie',
+      description: 'A cold refreshing drink for summer',
+      instructions:
+        'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
+      ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
+      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      prepTime: '35 min',
+      rating: 4,
+      img: 'img src/url',
+    },
+    {
+      id: 5,
+      title: 'Mixed Berry Smoothie',
+      description: 'A cold refreshing drink for summer',
+      instructions:
+        'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
+      ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
+      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      prepTime: '35 min',
+      rating: 4,
+      img: 'img src/url',
+    },
+    {
+      id: 6,
+      title: 'Mixed Berry Smoothie',
+      description: 'A cold refreshing drink for summer',
+      instructions:
+        'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
+      ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
+      tags: new Set(['breakfast', 'lunch', 'dinner']),
+      prepTime: '35 min',
+      rating: 4,
+      img: 'img src/url',
+    },
+    {
+      id: 7,
+      title: 'Mixed Berry Smoothie',
+      description: 'A cold refreshing drink for summer',
+      instructions:
+        'Add your mixed berries, orange juice, banana, and yogurt into a blender. Blend on pulse a few times at first, and then blend it with the smoothie setting.',
       ingredients: [{ ingredient: 'milk', amount: '1 cup' }],
       tags: new Set(['breakfast', 'lunch', 'dinner']),
       prepTime: '35 min',
@@ -14,7 +99,7 @@ const initialState = {
       img: 'img src/url',
     },
   ],
-  nextId: 1,
+  nextId: 8,
 };
 
 const recipesReducer = (state = initialState, action) => {

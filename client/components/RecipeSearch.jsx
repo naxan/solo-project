@@ -1,9 +1,10 @@
 import React from 'react';
+// save search to state?
 
 const RecipeSearch = () => {
   return (
     <div>
-      <h2>Recipe Search</h2>
+      <input type='search'></input>
     </div>
   );
 };

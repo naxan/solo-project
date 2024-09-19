@@ -16,8 +16,7 @@ const RecipeContainer = () => {
   }
 
   return (
-    <div>
-      <h2>Recipe Container</h2>
+    <div id='recipe-container'>
       {recipeCards}
     </div>
   );
