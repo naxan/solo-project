@@ -1,23 +1,14 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-
-import HomePage from '../pages/HomePage';
-import RecipePage from '../pages/RecipePage';
-import PlannerPage from '../pages/PlannerPage';
+import { Link } from 'react-router-dom';
 
 const HeaderNav = () => {
-    return (
-        <BrowserRouter>
-        <Link to='/'>Home</Link>
-        <Link to='/recipes'>Recipes</Link>
-        <Link to='/planner'>Planner</Link>
-        <Routes>
-          <Route path='/' element={<HomePage />}></Route>
-          <Route path='/recipes' element={<RecipePage />}></Route>
-          <Route path='/planner' element={<PlannerPage />}></Route>
-        </Routes>
-      </BrowserRouter>
-    )
-}
+  return (
+    <div>
+      <Link to='/'>Home</Link>
+      <Link to='/recipes'>Recipes</Link>
+      <Link to='/planner'>Planner</Link>
+    </div>
+  );
+};
 
 export default HeaderNav;
